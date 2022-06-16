@@ -77,7 +77,7 @@
             </GridPane>
          </top>
          <center>
-            <Canvas height="400.0" width="600.0" BorderPane.alignment="CENTER" />
+            <Canvas fx:id="canvas" height="400.0" width="600.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>

@@ -3,6 +3,8 @@ package ca.georgiancollege.comp1011m2022ice6;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
@@ -18,6 +20,9 @@ public class Vector2DCanvasController implements Initializable
     private Vector2D end = new Vector2D();
     private Color color = Color.BLACK;
     private float line_width = 1.0f;
+
+    @FXML
+    private Canvas canvas;
 
     @FXML
     private ComboBox<Vector2D> endVectorComboBox;
@@ -57,6 +62,10 @@ public class Vector2DCanvasController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        GraphicsContext context = canvas.getGraphicsContext2D();
 
+        context.setLineWidth(1.0);
+        context.setStroke(Color.ORANGE);
+        context.strokeLine(100, 100, 300, 300);
     }
 }
