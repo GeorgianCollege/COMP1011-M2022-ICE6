@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -73,6 +74,12 @@ public class CalculateVector2DDistanceController implements Initializable
         ResultTextField.clear();
 
         X1Spinner.requestFocus();
+    }
+
+    @FXML
+    void OnViewCanvasClicked(ActionEvent event) throws IOException
+    {
+        SceneManager.Instance().changeScene(event,"vector2d-canvas.fxml");
     }
 
     @Override

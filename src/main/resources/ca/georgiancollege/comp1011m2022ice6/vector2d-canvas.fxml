@@ -86,6 +86,9 @@
          <center>
             <Canvas fx:id="canvas" height="400.0" width="600.0" BorderPane.alignment="CENTER" />
          </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#calculateVector2DButtonClicked" text="Calculate Vector2D Distance" BorderPane.alignment="CENTER_RIGHT" />
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>
