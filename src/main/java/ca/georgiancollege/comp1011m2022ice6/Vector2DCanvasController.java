@@ -11,6 +11,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Vector2DCanvasController implements Initializable
@@ -59,13 +60,36 @@ public class Vector2DCanvasController implements Initializable
 
     }
 
+    @FXML
+    void endVector2DComboBoxChanged(ActionEvent event)
+    {
+        end = endVectorComboBox.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    void startVector2DComboBoxChanged(ActionEvent event)
+    {
+        start = startVectorComboBox.getSelectionModel().getSelectedItem();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        GraphicsContext context = canvas.getGraphicsContext2D();
 
-        context.setLineWidth(1.0);
-        context.setStroke(Color.ORANGE);
-        context.strokeLine(100, 100, 300, 300);
+        // Get the Vector2D Data from the Database
+        ArrayList<Vector2D> vectors = DBManager.Instance().readVectorTable();
+
+        // Display the Vector2D Data in each ComboBox
+        for(var vector: vectors)
+        {
+            startVectorComboBox.getItems().add(vector);
+            endVectorComboBox.getItems().add(vector);
+        }
+
+
+
+        //GraphicsContext context = canvas.getGraphicsContext2D();
+
+
     }
 }

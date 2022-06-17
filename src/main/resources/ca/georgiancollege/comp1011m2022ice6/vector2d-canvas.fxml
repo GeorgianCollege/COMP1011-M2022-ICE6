@@ -46,8 +46,8 @@
                   </Label>
                   <Label text="Start Vector2D" GridPane.rowIndex="1" />
                   <Label text="End Vector2D" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="startVectorComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="endVectorComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="startVectorComboBox" onAction="#startVector2DComboBoxChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="endVectorComboBox" onAction="#endVector2DComboBoxChanged" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Label text="Configuration" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="14.0" />
