@@ -61,6 +61,12 @@ public class Vector2DCanvasController implements Initializable
     }
 
     @FXML
+    void shapeColorPickerChanged(ActionEvent event)
+    {
+        color = shapeColorPicker.getValue();
+    }
+
+    @FXML
     void endVector2DComboBoxChanged(ActionEvent event)
     {
         end = endVectorComboBox.getSelectionModel().getSelectedItem();
