@@ -60,7 +60,8 @@ public class Vector2DCanvasController implements Initializable
     @FXML
     void drawRectangleButtonClicked(ActionEvent event)
     {
-
+        GraphicsContext context = canvas.getGraphicsContext2D();
+        Utility.Instance().DrawRect(context, color, start, end);
     }
 
     @FXML
