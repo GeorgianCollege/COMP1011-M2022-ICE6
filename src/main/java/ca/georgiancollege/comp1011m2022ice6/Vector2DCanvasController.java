@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
@@ -21,9 +22,14 @@ public class Vector2DCanvasController implements Initializable
     private Vector2D end = new Vector2D();
     private Color color = Color.BLACK;
     private float line_width = 1.0f;
+    private float radius = 50.0f;
+    private boolean filled = false;
 
     @FXML
     private Canvas canvas;
+
+    @FXML
+    private CheckBox circleFilledCheckBox;
 
     @FXML
     private ComboBox<Vector2D> endVectorComboBox;
@@ -32,10 +38,19 @@ public class Vector2DCanvasController implements Initializable
     private Spinner<Double> lineWidthSpinner;
 
     @FXML
+    private Spinner<Double> radiusSpinner;
+
+    @FXML
     private ColorPicker shapeColorPicker;
 
     @FXML
     private ComboBox<Vector2D> startVectorComboBox;
+
+    @FXML
+    void circleFilledCheckBoxChanged(ActionEvent event)
+    {
+        filled = circleFilledCheckBox.isSelected();
+    }
 
     @FXML
     void clearCanvasButtonClicked(ActionEvent event)
@@ -49,7 +64,8 @@ public class Vector2DCanvasController implements Initializable
     {
         GraphicsContext context = canvas.getGraphicsContext2D();
         line_width = lineWidthSpinner.getValue().floatValue();
-        Utility.Instance().DrawCircle(context, color, line_width, start, 50.0f, false);
+        radius = radiusSpinner.getValue().floatValue();
+        Utility.Instance().DrawCircle(context, color, line_width, start, radius, filled);
     }
 
     @FXML
@@ -101,5 +117,8 @@ public class Vector2DCanvasController implements Initializable
 
         // Configured the Line Width Spinner
         Utility.Instance().ConfigureVector2DSpinner(lineWidthSpinner, 0.25f, 10.0f, 1.0f, 0.25f);
+
+        // Configured the radius Spinner
+        Utility.Instance().ConfigureVector2DSpinner(radiusSpinner, 1.0f, 200.0f, 50.0f, 5.0f);
     }
 }
