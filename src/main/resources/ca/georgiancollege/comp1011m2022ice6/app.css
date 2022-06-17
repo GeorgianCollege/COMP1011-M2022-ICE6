@@ -8,3 +8,9 @@
 {
     -fx-alignment: CENTER;
 }
+
+.grid-pane-border
+{
+    -fx-border-style: none none solid none;
+    -fx-border-color: black;
+}
