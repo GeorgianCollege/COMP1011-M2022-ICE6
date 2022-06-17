@@ -46,7 +46,9 @@ public class Vector2DCanvasController implements Initializable
     @FXML
     void drawCircleButtonClicked(ActionEvent event)
     {
-
+        GraphicsContext context = canvas.getGraphicsContext2D();
+        line_width = lineWidthSpinner.getValue().floatValue();
+        Utility.Instance().DrawCircle(context, color, line_width, start, 50.0f, false);
     }
 
     @FXML
