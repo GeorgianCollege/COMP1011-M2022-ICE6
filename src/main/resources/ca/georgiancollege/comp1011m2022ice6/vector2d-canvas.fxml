@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
@@ -87,7 +88,14 @@
             <Canvas fx:id="canvas" height="400.0" width="600.0" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
-            <Button mnemonicParsing="false" onAction="#calculateVector2DButtonClicked" text="Calculate Vector2D Distance" BorderPane.alignment="CENTER_RIGHT" />
+            <HBox alignment="CENTER_RIGHT" styleClass="hbox-top-border" stylesheets="@app.css" BorderPane.alignment="CENTER_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#calculateVector2DButtonClicked" text="Calculate Vector2D Distance" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </bottom>
       </BorderPane>
    </children>

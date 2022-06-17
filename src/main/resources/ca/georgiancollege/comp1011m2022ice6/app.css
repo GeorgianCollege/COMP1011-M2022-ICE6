@@ -14,3 +14,9 @@
     -fx-border-style: none none solid none;
     -fx-border-color: black;
 }
+
+.hbox-top-border
+{
+    -fx-border-style: solid none none none;
+    -fx-border-color: black;
+}

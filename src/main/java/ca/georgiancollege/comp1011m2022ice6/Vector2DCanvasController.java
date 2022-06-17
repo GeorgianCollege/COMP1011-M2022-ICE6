@@ -64,6 +64,8 @@ public class Vector2DCanvasController implements Initializable
     {
         GraphicsContext context = canvas.getGraphicsContext2D();
         context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        context.setFill(Color.WHITE);
+        context.fillRect(0, 0,  canvas.getWidth(), canvas.getHeight());
     }
 
     @FXML
@@ -111,6 +113,10 @@ public class Vector2DCanvasController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        // fill the canvas with a white color
+        GraphicsContext context = canvas.getGraphicsContext2D();
+        context.setFill(Color.WHITE);
+        context.fillRect(0, 0,  canvas.getWidth(), canvas.getHeight());
 
         // Get the Vector2D Data from the Database
         ArrayList<Vector2D> vectors = DBManager.Instance().readVectorTable();
