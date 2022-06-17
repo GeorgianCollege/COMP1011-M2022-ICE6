@@ -92,6 +92,8 @@ public class Vector2DCanvasController implements Initializable
             endVectorComboBox.getItems().add(vector);
         }
 
+        Utility.Instance().ConfigureVector2DSpinner(lineWidthSpinner, 0.25f, 10.0f, 1.0f, 0.25f);
+
 
 
         //GraphicsContext context = canvas.getGraphicsContext2D();
